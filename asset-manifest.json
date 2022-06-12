@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/klikdaily-test/static/css/main.7f616f96.css",
+    "main.js": "/klikdaily-test/static/js/main.71811952.js",
+    "static/js/787.cd667782.chunk.js": "/klikdaily-test/static/js/787.cd667782.chunk.js",
+    "static/media/Klikdaily_Logo_RGB-02.png": "/klikdaily-test/static/media/Klikdaily_Logo_RGB-02.c53fefe2054ed809285d.png",
+    "index.html": "/klikdaily-test/index.html",
+    "static/media/arrow-clockwise.svg": "/klikdaily-test/static/media/arrow-clockwise.f90e86ac36d4f6a3e1140a7cc06b141d.svg",
+    "main.7f616f96.css.map": "/klikdaily-test/static/css/main.7f616f96.css.map",
+    "main.71811952.js.map": "/klikdaily-test/static/js/main.71811952.js.map",
+    "787.cd667782.chunk.js.map": "/klikdaily-test/static/js/787.cd667782.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f616f96.css",
+    "static/js/main.71811952.js"
+  ]
+}
