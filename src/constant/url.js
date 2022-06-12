@@ -1,3 +1,3 @@
-const EMPLOYEESAPI = 'http://dummy.restapiexample.com/api/v1/employees'
+const EMPLOYEESAPI = 'https://dummy.restapiexample.com/api/v1/employees'
 
 export { EMPLOYEESAPI }
