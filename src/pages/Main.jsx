@@ -5,40 +5,35 @@ import Header from "components/Header";
 import { Card, Container } from "react-bootstrap";
 import RefetchingCard from "components/RefetchingCard";
 import LoadingSpinner from "components/LoadingSpinner";
+import employessdata from "assets/data/employess.json"
 
 import get from "services/xhr";
 import { EMPLOYEESAPI } from "constant/url";
 
 export default function Main() {
   const [employees, setEmployees] = useState([])
-  const [status, setStatus] = useState("error")
+  const [status, setStatus] = useState("idle")
 
-//   const getEmployees = async () => {
-//     try {
-//       setStatus(true)
-//       await get(EMPLOYEESAPI)
-//         .then((resp) => {
-//           setEmployees(resp.data.data)
-//         })
-//         .catch((error) => {
-//           window.$toast.fire({
-//             icon: "error",
-//             title: error.resp.data.message || "Connection Error",
-//           });
-//         });
-//     } catch (err) {
-//       window.$toast.fire({
-//         icon: "error",
-//         title: "Connection Error",
-//       });
-//     };
-//     setStatus(false)
-//   }
+  const getEmployees = async () => {
+    try {
+      setStatus('loading')
+      await get(EMPLOYEESAPI)
+        .then((resp) => {
+          setEmployees(resp.data.data)
+          setStatus('idle')
+        })
+        .catch((error) => {
+          setStatus('error')
+        });
+    } catch (err) {
+      setStatus('error')
+    };
+  }
 
-  // useEffect(() => {
-
-  //   getEmployees()
-  // }, []);
+  useEffect(() => {
+    setEmployees(employessdata.data)
+    // getEmployees()
+  }, []);
 
 
   const Main = () => {
@@ -59,19 +54,16 @@ export default function Main() {
             </Card>
           </Container>
         )
-        break;
       
       case 'loading':
         return (
           <LoadingSpinner />
         )
-        break;
 
-        case 'error':
+      case 'error':
         return (
-          <RefetchingCard />
+          <RefetchingCard refetch={() => {getEmployees()}} />
         )
-        break;
     
       default:
         break;

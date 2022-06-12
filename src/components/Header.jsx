@@ -7,7 +7,7 @@ export default function Header() {
     <>
       <Navbar bg="light" expand="lg" className="px-3">
         <Navbar.Brand href="#home">
-          <img src={BrandImage} alt="Brand Image" height="30" />
+          <img src={BrandImage} alt="Brand Logo" height="30" />
         </Navbar.Brand>
       </Navbar>
     </>
